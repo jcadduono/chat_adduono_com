@@ -1,0 +1,8 @@
+local sha256 = require 'sha256'
+local json = require 'json'
+local args = ngx.req.get_uri_args()
+local response = {}
+if args.s ~= nil then
+	response.sha256 = sha256.generate(args.s)
+end
+ngx.print(json.stringify(response))

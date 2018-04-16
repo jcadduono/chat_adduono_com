@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=660">
+	<title>SOMERLYAWESOMECHATROOM - Edit Account Information</title>
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/webchat.css">
+	<link rel="stylesheet" href="css/account.css">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="icon" sizes="192x192" href="/icon/192.png">
+	<script src="js/account.js"></script>
+</head>
+<body onload="initValidate()">
+	<img src="../img/logo.png" alt="SOMERLYAWESOMECHATROOM">
+	<h1>Edit your account information</h1>
+	<span class="changed">[RESPONSE/]</span>
+	<form method="post" onsubmit="return usernameValidated()">
+		Current username: <b>[USERNAME/]</b><br>
+		New username:<br>
+		<input type="text" name="username" maxlength="18" oninput="validate(this)" required><br>
+		<input type="hidden" name="token" value="[TOKEN/]">
+		<button type="submit">Change Username</button>
+	</form>
+	<form method="post" onsubmit="return passwordValidated()">
+		New password:<br>
+		<input type="password" name="password" maxlength="32" oninput="validate(this)" required><br>
+		<input type="password" name="password2" placeholder="Confirm" maxlength="32" oninput="validate(this)" required><br>
+		<input type="hidden" name="token" value="[TOKEN/]">
+		<button type="submit">Change Password</button>
+	</form>
+	<form method="post" onsubmit="return emailValidated()">
+		Current email: <b>[EMAIL/]</b><br>
+		New email:<br>
+		<input type="email" name="email" value="" maxlength="64" oninput="validate(this)" required><br>
+		<input type="hidden" name="token" value="[TOKEN/]">
+		<button type="submit">Change Email</button>
+	</form>
+	<a href="../">Return Home</a>
+</body>
+</html>

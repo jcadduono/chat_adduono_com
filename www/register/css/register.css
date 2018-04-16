@@ -1,0 +1,57 @@
+form {
+	line-height: 22px;
+	display: inline-block;
+}
+input[type="text"], input[type="password"] {
+	margin-bottom:10px;
+	width: 150px;
+}
+input[type="email"] {
+	margin-bottom:10px;
+	width: 180px;
+}
+form button[type="submit"] {
+	clear: both;
+	display: block;
+	margin-top: 4px;
+}
+#recaptcha_widget {
+	margin-top: 10px;
+}
+#recaptcha_response_field {
+	width: 180px;
+	float: left;
+}
+#recaptcha_image img {
+	border: 1px solid #000000;
+	border-radius: 5px;
+}
+#recaptcha_image {
+	margin: 4px 0;
+}
+#recaptcha_reload {
+	height: 24px;
+	width: 24px;
+	margin-left: 3px;
+	margin-right: 0px;
+	padding: 2px 0;
+	float: left;
+}
+.oops {
+	font-size: 10px;
+	font-family: Verdana;
+	clear: both;
+	margin: 10px 0;
+	display: block;
+}
+form span  {
+	font-size: 12px;
+	font-family: Verdana;
+	padding-left: 6px;
+	color: #FF0000;
+}
+.recaptcha_error {
+	clear: both;
+	display: block;
+	padding: 0;
+}

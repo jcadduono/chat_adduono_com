@@ -1,0 +1,10 @@
+local json = require 'json'
+local args = ngx.req.get_uri_args()
+local response = {}
+if args.username ~= nil then
+	response.username = sql.chat('SELECT id FROM users WHERE name = ' .. sql.safe(args.username) .. ';').row[1] == nil and 1 or 0
+end
+if args.email ~= nil then
+	response.email = sql.chat('SELECT id FROM users WHERE email = ' .. sql.safe(args.email) .. ';').row[1] == nil and 1 or 0
+end
+ngx.print(json.stringify(response))

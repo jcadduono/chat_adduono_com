@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=660">
+	<meta name="description" content="SOMERLYAWESOMECHATROOM - a cool place to be a neckbeard">
+	<meta name="keywords" content="chat, neckbeard, programming">
+	<meta name="author" content="Jc Adduono">
+	<meta name="robots" content="index, nofollow">
+	<title>SOMERLYAWESOMECHATROOM - Login</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/webchat.css">
+	<link rel="stylesheet" href="css/login.css">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="icon" sizes="192x192" href="/icon/192.png">
+</head>
+<body id="login">
+	<img src="img/logo.png" alt="SOMERLYAWESOMECHATROOM">
+	<h1>Enter at your peril...</h1>
+	<form method="post">
+		Username:<br>
+		<input type="text" name="username" maxlength="18"><br>
+		Password:<br>
+		<input type="password" name="password"><br>
+		<input type="hidden" name="token" value="[TOKEN/]">
+		<button type="submit" name="login">Login</button>
+	</form>
+	<span class="noaccount">Don't have an account? Register now, it's easy and it's free.</span>
+	<a href="register">Register</a>
+	<br><br>
+	<span class="error">[ERRORS/]</span>
+</body>
+</html>

@@ -1,0 +1,599 @@
+a {
+    color: #666666;
+    text-decoration: none;
+}
+a:hover {
+    color: #CC0000;
+    text-decoration: underline;
+}
+#messages > div .magnet {
+    color: #00AA00;
+    padding-left: 15px;
+    background: url('../img/magnet.png') no-repeat left center;
+    height: 17px
+}
+#messages > div .skype {
+    color: #000000;
+    padding-left: 20px;
+    background: url('../img/skype.png') no-repeat left center;
+    height: 17px;
+}
+#messages > div .facebook {
+    color: #000000;
+    padding-left: 20px;
+    background: url('../img/facebook.png') no-repeat left center;
+    height: 17px;
+}
+.user,
+.user:hover {
+    color: #000000;
+}
+.host,
+.host:hover {
+    color: #00AA00;
+}
+.admin,
+.admin:hover {
+    color: #FF0000;
+}
+.owner,
+.owner:hover {
+    color: #FF6600;
+}
+.server {
+    color: #000000;
+}
+.error {
+    color: #FF0000;
+}
+#messages > div .host {
+    padding-left: 17px;
+    background: url('../img/host.gif') no-repeat left center;
+}
+#messages > div .admin {
+    padding-left: 20px;
+    background: url('../img/admin.gif') no-repeat left center;
+}
+#messages > div .owner {
+    padding-left: 30px;
+    background: url('../img/owner.png') no-repeat left center;
+}
+#messages > div .action {
+    color: #7000AA;
+}
+#messages > div > div {
+    padding: 3px 8px;
+    line-height: 19px;
+    display: block;
+}
+#messages > div cite {
+    margin-right: 5px;
+}
+#messages > div img {
+    margin: 0 0;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+}
+#messages > div .image {
+    border: 1px solid #000000;
+    max-height: 150px;
+    max-width: 100%;
+    position: static;
+}
+#messages > div .time {
+    position: relative;
+    padding-right: 1px;
+    top: -1px;
+}
+@media screen,
+projection,
+tv,
+handheld {
+    body {
+        overflow: hidden;
+        background: url('../img/background.png');
+        color: #FFFFFF;
+    }
+    button,
+    a.button {
+        padding: 0px 9px 0px 9px;
+        background: linear-gradient(to bottom, #BA0000 0%, #7A0000 100%);
+        background: -o-linear-gradient(to bottom, #BA0000 0%, #7A0000 100%);
+        background: -moz-linear-gradient(to bottom, #BA0000 0%, #7A0000 100%);
+        background: -ms-linear-gradient(to bottom, #BA0000 0%, #7A0000 100%);
+        color: #FFFFFF;
+        border: 1px solid #000000;
+        border-radius: 5px;
+        box-sizing: border-box;
+        display: inline-block;
+    }
+    button:hover,
+    a.button:hover,
+    #tabs .tabFlashing {
+        background: linear-gradient(to bottom, #EA0000 0%, #7A0000 100%);
+        background: -o-linear-gradient(to bottom, #EA0000 0%, #7A0000 100%);
+        background: -moz-linear-gradient(to bottom, #EA0000 0%, #7A0000 100%);
+        background: -ms-linear-gradient(to bottom, #EA0000 0%, #7A0000 100%);
+    }
+    a.button:hover {
+        text-decoration: none;
+    }
+    button[disabled] {
+        background: linear-gradient(to bottom, #9A0000 0%, #5A0000 100%);
+        background: -o-linear-gradient(to bottom, #9A0000 0%, #5A0000 100%);
+        background: -moz-linear-gradient(to bottom, #9A0000 0%, #5A0000 100%);
+        background: -ms-linear-gradient(to bottom, #9A0000 0%, #5A0000 100%);
+    }
+    select {
+        color: #000000;
+        border: 1px solid #000000;
+        background-color: #FFFFFF;
+        height: 23px;
+    }
+    #inputField {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    #photoFloat,
+    #onlineList img,
+    #colors,
+    #emoticonsBorder {
+        border: 1px solid #000000;
+        background: url('../img/background.png');
+    }
+    #messages,
+    #onlineListContainer,
+    #helpContainer,
+    #settingsContainer,
+    textarea {
+        border: 1px solid #000000;
+        background-color: #FFFFFF;
+        color: #000000;
+    }
+    #logo {
+        position: absolute;
+        left: 9px;
+        top: 9px;
+    }
+    #tabs {
+        position: absolute;
+        left: 194px;
+        right: 230px;
+        top: 11px;
+        z-index: 2;
+    }
+    #tabs div {
+        float: left;
+    }
+    #tabs div div {
+        padding-bottom: 4px;
+        margin-right: 4px;
+    }
+    #tabs button {
+        display: inline-block;
+        float: left;
+    }
+    #tabRoomContainer .chatTab {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+    #tabQueryContainer .chatTab {
+        padding-right: 5px;
+        padding-left: 0px;
+    }
+    #tabQueryContainer .chatTab img {
+        position: relative;
+        top: 3px;
+        margin-right: 4px;
+    }
+    #tabs .tabClose {
+        padding-left: 2px;
+        padding-right: 3px;
+    }
+    #navigation {
+        float: right;
+        position: absolute;
+        right: 10px;
+        top: 11px;
+    }
+    #room {
+        width: 114px;
+        height: 23px;
+        margin-right: 7px;
+        margin-bottom: 1px;
+        vertical-align: middle;
+    }
+    #messages {
+        position: absolute;
+        left: 10px;
+        right: 220px;
+        top: 48px;
+        bottom: 133px;
+    }
+    #inputFieldContainer {
+        position: absolute;
+        left: 10px;
+        right: 10px;
+        height: 48px;
+        bottom: 81px;
+    }
+    #sendContainer {
+        position: absolute;
+        right: 10px;
+        bottom: 44px;
+    }
+    #messageLength {
+        padding-right: 4px;
+    }
+    #onlineListContainer {
+        position: absolute;
+        right: 10px;
+        top: 48px;
+        width: 204px;
+        bottom: 133px;
+    }
+    #helpContainer {
+        position: absolute;
+        right: 10px;
+        top: 48px;
+        width: 360px;
+        bottom: 133px;
+        overflow-y: scroll;
+    }
+    #settingsContainer {
+        position: absolute;
+        right: 10px;
+        top: 48px;
+        width: 360px;
+        bottom: 133px;
+        overflow-y: scroll;
+    }
+    #bbCode {
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        padding-right: 3px;
+    }
+    #bbCode button img {
+        margin: 0 0;
+        vertical-align: top;
+        padding-top: 3px;
+    }
+    #fontPersist {
+        position: absolute;
+        left: 10px;
+        bottom: 47px;
+        vertical-align: top;
+    }
+    #fontPersistColorSetting {
+        height: 20px;
+        width: 66px;
+        padding: 0px 0px;
+        padding-top: 1px;
+        margin: 0 0;
+        vertical-align: top;
+        text-align: center;
+    }
+    #fontPersistSizeSetting {
+        width: 44px;
+        height: 23px;
+    }
+    #fontPersistFontSetting {
+        width: 118px;
+        height: 23px;
+    }
+    #fontPersist label {
+        padding-right: 5px;
+        padding-left: 3px;
+    }
+    #fontPersist input[type="checkbox"] {
+        position: relative;
+        top: 2px;
+    }
+    #colors {
+        position: absolute;
+        left: 10px;
+        bottom: 44px;
+        padding: 3px;
+        z-index: 1;
+    }
+    #emoticonsBorder {
+        position: absolute;
+        left: 10px;
+        bottom: 41px;
+        padding: 4px;
+        z-index: 1;
+    }
+    #emoticons {
+        padding: 3px 3px;
+        -moz-column-count: 6;
+        -moz-column-gap: 0px;
+        -webkit-column-count: 6;
+        -webkit-column-gap: 0px;
+        width: 228px;
+        height: 228px;
+        text-align: center;
+    }
+    #optionsContainer {
+        position: absolute;
+        right: 10px;
+        bottom: 12px;
+    }
+    #colors span {
+        display: block;
+        float: left;
+        width: 21px;
+        height: 21px;
+        border: 1px solid #000000;
+    }
+    #tabRoomContainer .chatTab {
+        border-radius: 5px;
+    }
+    #tabQueryContainer .chatTab {
+        border-right: 0;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+    #tabs .tabClose {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+    #photoFloat {
+        z-index: 3;
+        display: none;
+        position: absolute;
+    }
+    #inputField {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        resize: none;
+        padding-right: 2px;
+        padding-left: 2px;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    #onlineListContainer h3,
+    #helpContainer h3,
+    #settingsContainer h3 {
+        margin: 0 0;
+        height: 23px;
+        text-align: center;
+        line-height: 23px;
+    }
+    #onlineList {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 25px;
+        bottom: 0px;
+    }
+    #onlineList {
+        overflow-x: hidden;
+        overflow-y: scroll;
+        white-space: nowrap;
+    }
+    #onlineList > div {
+        padding: 1px 2px;
+        display: block;
+    }
+    #onlineList > div > img {
+        float: left;
+        width: 21px;
+        height: 21px;
+        margin-right: 3px;
+    }
+    #onlineList > div > a {
+        line-height: 23px;
+    }
+    #onlineList > div > div {
+        padding: 1px 0 0 0;
+    }
+    #onlineList > div > div > a {
+        display: block;
+        line-height: 18px;
+    }
+    #onlineList > div > div > a:before {
+        content: '\25CF';
+        padding: 0 8px 0 7px;
+        color: #000;
+    }
+    #onlineList .away {
+        padding: 1px 0;
+        word-wrap: break-word;
+        color: #AAAAAA;
+        display: block;
+        white-space: normal;
+    }
+    #helpContainer td,
+    #settingsContainer td {
+        padding: 4px 10px;
+        vertical-align: top;
+    }
+    #helpContainer table {
+        width: 100%;
+    }
+    #helpContainer .desc {
+        max-width: 146px;
+    }
+    #helpContainer .hint {
+        width: 100%;
+        padding: 16px 16px;
+        font-style: italic;
+    }
+    #settingsContainer td {
+        vertical-align: middle;
+    }
+    #settingsContainer .setting {
+        width: 115px;
+    }
+    #settingsContainer input[type="text"] {
+        width: 100px;
+    }
+    #helpContainer table,
+    #settingsContainer table {
+        border-collapse: collapse;
+    }
+    #bbCode input,
+    #emoticons img,
+    button,
+    .button,
+    #messages > div img[alt="help"],
+    #messages > div .name,
+    #messages > div .delete {
+        cursor: pointer;
+    }
+    #messages,
+    #messages > div {
+        border-top-left-radius: 5px;
+    }
+    #emoticonsBorder #emoticons {
+        background-color: #FFFFFF;
+        border: 1px solid #000000;
+    }
+    #onlineList a {
+        text-decoration: none;
+    }
+    #onlineListContainer h3,
+    #helpContainer h3,
+    #settingsContainer h3 {
+        background: linear-gradient(to bottom, #BA0000 0%, #7A0000 100%);
+        background: -o-linear-gradient(to bottom, #BA0000 0%, #7A0000 100%);
+        background: -moz-linear-gradient(to bottom, #BA0000 0%, #7A0000 100%);
+        background: -ms-linear-gradient(to bottom, #BA0000 0%, #7A0000 100%);
+        color: #FFFFFF;
+        border-bottom: 1px solid #000000;
+    }
+    #helpContainer h3,
+    #settingsContainer h3 {
+        border-right: 1px solid #000000;
+    }
+    #emoticons img {
+        padding: 2px 2px;
+    }
+    #helpContainer #hostOnlyHelp {
+        border-top: 1px solid #000000;
+    }
+    #fontPersistColorSetting {
+        border-radius: 0px;
+        border: 1px solid #000;
+    }
+    #optionsContainer button,
+    #settingsContainer button {
+        background: url('../img/chatsprites.png') no-repeat top left;
+        height: 22px;
+        width: 22px;
+        border: 0;
+        vertical-align: top;
+    }
+    #optionsContainer button {
+        margin-left: 3px;
+    }
+    button#toggleHelp {
+        background-position: 0 -88px;
+    }
+    button#toggleSettings {
+        background-position: 0 -132px;
+    }
+    button#toggleOnline {
+        background-position: 0 -154px;
+    }
+    button#toggleSound {
+        background-position: 0 0;
+    }
+    button#toggleSound.off {
+        background-position: 0 -22px;
+    }
+    button#toggleAutoscroll {
+        background-position: 0 -44px;
+    }
+    button#toggleAutoscroll.off {
+        background-position: 0 -66px;
+    }
+    #settingsContainer button {
+        background-position: 0 -110px;
+    }
+    #messages > div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+    }
+    #messages > div .image:hover {
+        border: 1px solid #CC0000;
+    }
+    #messages > div .youtube {
+        border: 1px solid #000000;
+        height: 200px;
+        width: 355px;
+        margin: 0 0;
+        vertical-align: middle;
+    }
+    #messages > div .delete {
+        display: block;
+        float: right;
+        width: 10px;
+        height: 10px;
+        margin-top: 4px;
+        padding-left: 5px;
+        background: url('../img/delete.png') no-repeat right;
+    }
+    #messages > div > div:nth-child(odd),
+    #onlineList > div:nth-child(odd),
+    #settingsContainer tr:nth-child(odd),
+    #helpContainer tr:nth-child(odd) {
+        background-color: #FFFFFF;
+    }
+    #messages > div > div:nth-child(even),
+    #onlineList > div:nth-child(even),
+    #settingsContainer tr:nth-child(even),
+    #helpContainer tr:nth-child(even) {
+        background-color: #FBFBFB;
+    }
+    .ignored {
+        text-decoration: line-through;
+        color: #FF0000;
+    }
+    .muted {
+        text-decoration: line-through;
+        color: #999999;
+    }
+    * {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    *:focus {
+        outline: 0;
+    }
+}
+@media print {
+    #messages {
+        position: static;
+    }
+    #messages > div {
+        overflow: visible;
+    }
+    #logo,
+    #photoFloat,
+    #tabs,
+    #navigation,
+    #bbCode,
+    #inputFieldContainer,
+    #sendContainer,
+    #onlineListContainer,
+    #helpContainer,
+    #settingsContainer,
+    #optionsContainer,
+    #colors,
+    #fontPersist,
+    #emoticons,
+    #messages > div .delete,
+    #messages > div .youtube {
+        display: none !important;
+    }
+    #messages > div > div {
+        padding: 0px 4px 0px 4px;
+    }
+}

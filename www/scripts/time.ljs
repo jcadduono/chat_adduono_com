@@ -1,0 +1,25 @@
+local json = require 'json'
+local ost = os.time
+local mlt = require 'millitime'
+local ut = require 'unixtime'
+local nc = require 'nanoclock'
+local ngt = ngx.time
+
+local starttime = nc()
+
+local tt = {
+	ost = ost(),
+	ngt = ngt(),
+	mlt = string.format('%.34fs', mlt()),
+	ut = string.format('%.34fs', ut()),
+	nc = string.format('%.34fs', nc())
+}
+ngx.say(json.stringify(tt))
+
+local endtime = nc()
+
+ngx.say()
+
+ngx.say('page compile time: ' .. string.format('%.34fs', endtime - starttime))
+
+ngx.eof()

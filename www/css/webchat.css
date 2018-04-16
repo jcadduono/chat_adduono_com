@@ -1,0 +1,96 @@
+@font-face {
+    font-family: Roboto;
+    src: url('/font/roboto.ttf');
+}
+
+@font-face {
+    font-family: Roboto;
+	font-style: italic;
+    src: url('/font/robotoitalic.ttf');
+}
+
+@font-face {
+    font-family: Roboto;
+	font-weight: bold;
+    src: url('/font/robotobold.ttf');
+}
+
+@font-face {
+    font-family: Roboto;
+	font-weight: bold;
+	font-style: italic;
+    src: url('/font/robotobolditalic.ttf');
+}
+form {
+	margin: 0;
+}
+body {
+	margin:40px 50px 20px 50px;
+	font-size:0.9em;
+	font-family: Roboto, "Helvetica Neue", Helvetica, Arial, Calibri, "Segoe UI", sans-serif;
+	background: url('../img/background.png');
+	color:#FFFFFF;
+}
+h1 {
+	margin: 10px 0;
+	font-size:1.6em;
+}
+h2 {
+	margin: 10px 0;
+	font-size:1.2em;
+}
+a {
+	text-decoration:none;
+	display:inline-block;
+	text-align: center;
+}
+button, a {
+	padding:0px 9px 0px 9px;
+	background:linear-gradient(to bottom,#BA0000 0%,#7A0000 100%);
+	background:-o-linear-gradient(to bottom,#BA0000 0%,#7A0000 100%);
+	background:-moz-linear-gradient(to bottom,#BA0000 0%,#7A0000 100%);
+	background:-ms-linear-gradient(to bottom,#BA0000 0%,#7A0000 100%);
+	color:#FFFFFF;
+	border:1px solid #000000;
+	border-radius:5px;
+	box-sizing:border-box;
+	display:inline-block;
+	cursor:pointer;
+	font-size:0.9em;
+	line-height:25px;
+}
+button:hover, a:hover {
+	background:linear-gradient(to bottom,#EA0000 0%,#7A0000 100%);
+	background:-o-linear-gradient(to bottom,#EA0000 0%,#7A0000 100%);
+	background:-moz-linear-gradient(to bottom,#EA0000 0%,#7A0000 100%);
+	background:-ms-linear-gradient(to bottom,#EA0000 0%,#7A0000 100%);
+}
+button[disabled] {
+	background:linear-gradient(to bottom,#9A0000 0%,#5A0000 100%);
+	background:-o-linear-gradient(to bottom,#9A0000 0%,#5A0000 100%);
+	background:-moz-linear-gradient(to bottom,#9A0000 0%,#5A0000 100%);
+	background:-ms-linear-gradient(to bottom,#9A0000 0%,#5A0000 100%);
+}
+textarea:focus, input:focus, select:focus, button:focus, a:focus {
+	outline:0;
+}
+input[type="text"], input[type="password"], input[type="email"] {
+	color:#000000;
+	border:1px solid #000000;
+	background-color:#FFFFFF;
+	padding:0px 3px;
+	border-radius: 5px;
+	height: 24px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+select {
+	color:#000000;
+	border:1px solid #000000;
+	background-color:#FFFFFF;
+	height:23px;
+}
+.error {
+	color:#FF0000;
+}

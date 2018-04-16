@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=660">
+	<title>SOMERLYAWESOMECHATROOM - Chat Lobby</title>
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/webchat.css">
+	<link rel="stylesheet" href="css/lobby.css">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="icon" sizes="192x192" href="/icon/192.png">
+	<script src="js/lang/en.js"></script>
+	<script src="js/jscolor.js"></script>
+	<script src="js/chatutil.js"></script>
+	<script src="js/chatuser.js"></script>
+	<script src="js/chattabs.js"></script>
+	<script src="js/chat.js"></script>
+	<script src="js/chatconf.js"></script>[IF_BANNED]
+	<script>
+		var banRemaining = [BAN_REMAINING/];
+	</script>[/IF_BANNED]
+	<script src="js/lobby.js"></script>
+</head>
+<body onload="initLobby();">
+	<img src="../img/logo.png" alt="SOMERLYAWESOMECHATROOM">
+	<h1>
+		Well, [USERNAME/], you're in the chat lobby now.<br>
+		I hope that's what you were going for.
+	</h1>
+	<h2>There are [ONLINE_COUNT/] users online across all rooms.</h2>[IF_BANNED]
+	<span id="banned">
+		You are banned by [BANNED_BY/] for another <span id="ban_remaining"></span>.<br>
+		Reason: [BAN_REASON/]
+	</span>[/IF_BANNED]
+	<div id="rooms">[ROOMS]
+		<div class="room">
+			<div class="title">
+				[ROOM_NAME/]
+				<span>([USER_COUNT/] users)</span>
+				<div class="role[REQUIRED_ROLE/]"></div>
+			</div>
+			<div class="users">[USER]
+				<div class="role[ROLE/]" onclick="window.open('../p/[USERNAME/]');"><img src="[PHOTO/]" alt="">[USERNAME/]</div>[/USER]
+			</div>
+			<form method="post">
+				<input type="hidden" name="token" value="[TOKEN/]">
+				<button type="submit" name="room" value="[ROOM_ID/]">Enter Room</button>
+			</form>
+		</div>[/ROOMS]
+	</div>
+	<br><br>
+	<a href="../">Return Home</a><br><br>
+	<form action="../" method="post">
+		<input type="hidden" name="token" value="[TOKEN/]">
+		<button type="submit" name="logout">Logout</button>
+	</form>
+</body>
+</html>

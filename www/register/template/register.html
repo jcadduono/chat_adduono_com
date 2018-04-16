@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=660">
+	<title>SOMERLYAWESOMECHATROOM - Register</title>
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/webchat.css">
+	<link rel="stylesheet" href="css/register.css">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="icon" sizes="192x192" href="/icon/192.png">
+	<script src="js/register.js"></script>
+</head>
+<body onload="initRegister()">
+	<img src="../img/logo.png" alt="SOMERLYAWESOMECHATROOM">
+	<h1>How nice of you to join us! We hope to see you soon.</h1>
+	<form method="post" onsubmit="return allValidated()">
+		Username:<br>
+		<input type="text" name="username" value="[USERNAME/]" maxlength="18" oninput="validate(this)" required autofocus><br>
+		Password:<br>
+		<input type="password" name="password" value="[PASSWORD/]" maxlength="32" oninput="validate(this)" required><br>
+		<input type="password" name="password2" value="[PASSWORD2/]" placeholder="Confirm" maxlength="32" oninput="validate(this)" required><br>
+		Email:<br>
+		<input type="email" name="email" value="[EMAIL/]" maxlength="64" oninput="validate(this)" required><br>
+		<div id="recaptcha_widget">
+			<div id="recaptcha_image"></div>
+			Enter the above text to prove you're not here for John Connor:<br>
+			<input type="text" id="recaptcha_response_field" name="recaptcha_response" oninput="validate(this)">
+			<button id="recaptcha_reload" type="button" onclick="Recaptcha.reload()"><img src="img/reload.png" alt="Reload"></button>
+		</div>
+		<span class="recaptcha_error">[RECAPTCHA_ERROR/]</span>
+		<script src="//www.google.com/recaptcha/api/challenge?k=[RECAPTCHA_PUBLIC_KEY/]"></script>
+		<input type="hidden" name="token" value="[TOKEN/]">
+		<button type="submit">Create Account</button>
+	</form>
+	<span class="oops">Managed to get to this page on accident? It's okay, click below to return to the login page!</span>
+	<a href="../">Go to Login</a>
+</body>
+</html>

@@ -1,0 +1,238 @@
+@font-face {
+    font-family: Roboto;
+    src: url('/font/roboto.ttf');
+}
+@font-face {
+    font-family: Roboto;
+	font-style: italic;
+    src: url('/font/robotoitalic.ttf');
+}
+@font-face {
+    font-family: Roboto;
+	font-weight: bold;
+    src: url('/font/robotobold.ttf');
+}
+@font-face {
+    font-family: Roboto;
+	font-weight: bold;
+	font-style: italic;
+    src: url('/font/robotobolditalic.ttf');
+}
+body {
+	font-size:0.9em;
+}
+h1 {
+	margin: 10px 0;
+	font-size:1.6em;
+	font-weight:bold;
+}
+h3  {
+	font-size:1.05em;
+	font-weight:normal;
+}
+button, a.button {
+	font-size:0.9em;
+	line-height:25px;
+}
+#messages > div .magnet {
+	font-size:13px;
+	font-style:normal;
+	font-weight:bold;
+	font-variant:small-caps;
+}
+#messages > div .skype {
+	font-size:13px;
+	font-style:normal;
+	font-weight:bold;
+}
+#messages > div .facebook {
+	font-size:13px;
+	font-style:normal;
+	font-weight:bold;
+}
+#messages > div .away {
+	font-size:0.9em;
+	line-height:1.0em;
+}
+#messages > div .time {
+	font-size:0.7em;
+}
+#messages > div .name {
+	font-weight:bold;
+}
+#messages > div .server {
+	font-style:italic;
+}
+#messages > div .action {
+	font-style:italic;
+	font-weight:bold;
+	font-size:1.05em;
+}
+q {
+	font-variant:small-caps;
+}
+code {
+	font-size:1.2em;
+}
+#onlineListContainer #onlineList > div {
+	font-size:1.0em;
+}
+#onlineListContainer #onlineList > div > div {
+	font-size:0.8em;
+}
+#helpContainer #helpList td {
+	font-size:0.9em;
+}
+#helpContainer #helpList td.code {
+	font-style:italic;
+}
+#settingsContainer #settingsList td {
+	font-size:0.9em;
+}
+.b {
+	font-weight:bold;
+}
+.i {
+	font-style:italic;
+}
+.u {
+	text-decoration:underline;
+}
+.font1 {
+	font-family: "Andale Mono", AndaleMono, monospace;
+}
+.font2 {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.font3 {
+	font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+}
+.font4 {
+	font-family: "Arial Narrow", Arial, sans-serif;
+}
+.font5 {
+	font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+}
+.font6 {
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+}
+.font7 {
+	font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+.font8 {
+	font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
+}
+.font9 {
+	font-family: "Bodoni MT", Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+.font10 {
+	font-family: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+}
+.font11 {
+	font-family: "Brush Script MT", cursive;
+}
+.font12 {
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+.font13 {
+	font-family: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, "Hoefler Text", "Bitstream Charter", Georgia, serif;
+}
+.font14 {
+	font-family: Cambria, Georgia, serif;
+}
+.font15 {
+	font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+.font16 {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+.font17 {
+	font-family: Consolas, monaco, monospace;
+}
+.font18 {
+	font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+}
+.font19, #fontPersistColorSetting {
+	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+}
+.font20 {
+	font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+.font21 {
+	font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+}
+.font22 {
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+.font23 {
+	font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+}
+.font24 {
+	font-family: Geneva, Tahoma, Verdana, sans-serif;
+}
+.font25 {
+	font-family: Georgia, Times, "Times New Roman", serif;
+}
+.font26 {
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+}
+.font27 {
+	font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
+}
+.font28 {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.font29 {
+	font-family: "Hoefler Text", "Baskerville old face", Garamond, "Times New Roman", serif;
+}
+.font30 {
+	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+}
+.font31 {
+	font-family: "Lucida Bright", Georgia, serif;
+}
+.font32 {
+	font-family: "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono", monospace;
+}
+.font33 {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+}
+.font34 {
+	font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+}
+.font35 {
+	font-family: Monaco, Consolas, "Lucida Console", monospace;
+}
+.font36 {
+	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+}
+.font37 {
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+}
+.font38 {
+	font-family: Papyrus, fantasy;
+}
+.font39 {
+	font-family: Perpetua, Baskerville, "Big Caslon", "Palatino Linotype", Palatino, "URW Palladio L", "Nimbus Roman No9 L", serif;
+}
+.font40, body {
+	font-family: Roboto, "Helvetica Neue", Helvetica, Arial, Calibri, "Segoe UI", sans-serif;
+}
+.font41 {
+	font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
+}
+.font42 {
+	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+}
+.font43 {
+	font-family: Tahoma, Verdana, Segoe, sans-serif;
+}
+.font44 {
+	font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+}
+.font45 {
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+}
+.font46, #onlineList .away, #messages > div .magnet, #messages > div .skype, #messages > div .facebook {
+	font-family: Verdana, Geneva, sans-serif;
+}

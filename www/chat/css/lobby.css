@@ -1,0 +1,85 @@
+#rooms {
+	display: inline-block;
+	margin-top: 8px;
+	max-width: 900px;
+}
+#rooms div div.users div {
+	float: left;
+	width: 50px;
+	text-align: center;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 12px;
+	white-space: nowrap;
+	margin: 1px 1px;
+	cursor: pointer;
+}
+#rooms div div.users div img {
+	width: 48px;
+	height: 48px;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 2px;
+	border: 1px solid #000000;
+}
+#rooms div div.users {
+	margin: 2px 0;
+}
+#rooms .room {
+	width: 260px;
+	float: left;
+	margin: 10px 10px;
+}
+#rooms form {
+	clear: both;
+	text-align: center;
+	padding-top: 4px;
+}
+#rooms .title {
+	font-size: 16px;
+	font-weight: bold;
+	height: 22px;
+	border-bottom: 1px solid #FFFFFF;
+}
+#rooms .title span {
+	font-size: 12px;
+	font-weight: normal;
+	margin-left: 3px;
+}
+#rooms .title .role2 {
+	background: url('../img/host.gif') no-repeat bottom;
+	width: 18px;
+	height: 18px;
+	float: right;
+}
+#rooms .title .role3 {
+	background: url('../img/admin.gif') no-repeat bottom;
+	width: 18px;
+	height: 18px;
+	float: right;
+}
+#rooms .title .role4 {
+	background: url('../img/owner.png') no-repeat bottom;
+	width: 28px;
+	height: 18px;
+	float: right;
+}
+#rooms .users div {
+	font-weight: bold;
+}
+#rooms .users .role2 {
+	color: #00CC00;
+}
+#rooms .users .role3 {
+	color: #FF0000;
+}
+#rooms .users .role4 {
+	color: #FF6600;
+}
+#banned, #max_online {
+	color: #FF0000;
+	font-weight: bold;
+	font-size: 14px;
+	display: block;
+	margin-top: 10px;
+}

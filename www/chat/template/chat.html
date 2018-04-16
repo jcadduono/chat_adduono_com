@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=660">
+	<meta name="mobile-web-app-capable" content="yes">
+	<title>SOMERLYAWESOMECHATROOM - Chat</title>
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="css/chat.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="icon" sizes="192x192" href="/icon/192.png">
+	<script src="js/lang/en.js"></script>
+	<script src="js/jscolor.js"></script>
+	<script src="js/chatutil.js"></script>
+	<script src="js/chatuser.js"></script>
+	<script src="js/chattabs.js"></script>
+	<script src="js/chat.js"></script>
+	<script src="js/chatconf.js"></script>
+</head>
+<body>
+	<img id="photoFloat" src="img/loading.gif" alt="">
+	<img id="logo" src="img/minilogo.png" alt="SOMERLYAWESOMECHATROOM">
+	<div id="navigation">
+		<select id="room" onchange="chat.switchRoom(this.options[this.selectedIndex].value)"></select>
+		<a class="button" href=".">Go to Lobby</a>
+	</div>
+	<div id="tabs">
+		<div id="tabRoomContainer"></div>
+		<div id="tabQueryContainer"></div>
+	</div>
+	<div id="messages"></div>
+	<div id="inputFieldContainer">
+		<textarea id="inputField" title="Press [Shift] + [Enter] to add a new line" onkeypress="chat.handleInputFieldKeyPress(event)" oninput="chat.handleInputFieldEdit(event)" onkeydown="chat.handleInputFieldKeyDown(event)" autofocus></textarea>
+	</div>
+	<div id="sendContainer">
+		<span id="messageLength"></span>
+		<button onclick="chat.sendMessage(null, true)">Send</button>
+	</div>
+	<div id="fontPersist">
+		<select id="fontPersistSizeSetting" onchange="chat.updateFontStyle()">
+			<option value="11">11</option>
+			<option value="12">12</option>
+			<option value="13">13</option>
+			<option value="14">14</option>
+			<option value="15">15</option>
+			<option value="16">16</option>
+			<option value="17">17</option>
+			<option value="18">18</option>
+			<option value="19">19</option>
+		</select>
+		<select id="fontPersistFontSetting" onchange="chat.updateFontStyle()">
+			<option value="1">Andale Mono</option>
+			<option value="2">Arial</option>
+			<option value="3">Arial Black</option>
+			<option value="4">Arial Narrow</option>
+			<option value="5">Arial Rounded MT Bold</option>
+			<option value="6">Avant Garde</option>
+			<option value="7">Baskerville</option>
+			<option value="8">Big Caslon</option>
+			<option value="9">Bodoni MT</option>
+			<option value="10">Book Antiqua</option>
+			<option value="11">Brush Script MT</option>
+			<option value="12">Calibri</option>
+			<option value="13">Calisto MT</option>
+			<option value="14">Cambria</option>
+			<option value="15">Candara</option>
+			<option value="16">Century Gothic</option>
+			<option value="17">Consolas</option>
+			<option value="18">Copperplate</option>
+			<option value="19">Courier New</option>
+			<option value="20">Didot</option>
+			<option value="21">Franklin Gothic</option>
+			<option value="22">Futura</option>
+			<option value="23">Garamond</option>
+			<option value="24">Geneva</option>
+			<option value="25">Georgia</option>
+			<option value="26">Gill Sans</option>
+			<option value="27">Goudy Old Style</option>
+			<option value="28">Helvetica</option>
+			<option value="29">Hoefler Text</option>
+			<option value="30">Impact</option>
+			<option value="31">Lucida Bright</option>
+			<option value="32">Lucida Console</option>
+			<option value="33">Lucida Grande</option>
+			<option value="34">Lucida Sans Typewriter</option>
+			<option value="35">Monaco</option>
+			<option value="36">Optima</option>
+			<option value="37">Palatino</option>
+			<option value="38">Papyrus</option>
+			<option value="39">Perpetua</option>
+			<option value="40">Roboto</option>
+			<option value="41">Rockwell</option>
+			<option value="42">Segoe UI</option>
+			<option value="43">Tahoma</option>
+			<option value="44">Times New Roman</option>
+			<option value="45">Trebuchet MS</option>
+			<option value="46">Verdana</option>
+		</select>
+		<input id="fontPersistColorSetting" type="text" spellcheck="false" class="color" title="Select a font color" onchange="chat.updateFontStyle()">
+		<label for="fontPersistBoldSetting" class="b">b</label><input type="checkbox" id="fontPersistBoldSetting" onclick="chat.updateFontStyle()">
+		<label for="fontPersistItalicSetting" class="i">i</label><input type="checkbox" id="fontPersistItalicSetting" onclick="chat.updateFontStyle()">
+		<label for="fontPersistUnderlineSetting" class="u">u</label><input type="checkbox" id="fontPersistUnderlineSetting" onclick="chat.updateFontStyle()">
+	</div>
+	<div id="bbCode">
+		<button title="Select an emoticon to add to your message" onclick="showHide('emoticonsBorder')"><img src="img/emoticon.png" alt=":P"></button>
+		<button title="Bold text: [b]text[/b]" onclick="chat.insertBBCode('b')" class="b">b</button>
+		<button title="Italic text: [i]text[/i]" onclick="chat.insertBBCode('i')" class="i">i</button>
+		<button title="Underline text: [u]text[/u]" onclick="chat.insertBBCode('u')" class="u">u</button>
+		<button title="Quote text: [quote]text[/quote] or [quote=author]text[/quote]" onclick="chat.insertBBCode('quote')">Quote</button>
+		<button title="Code display: [code]code[/code]" onclick="chat.insertBBCode('code')">Code</button>
+		<button title="Color: [color=red]text[/color]" onclick="showHide('colors')">Color</button>
+	</div>
+	<div id="emoticonsBorder" style="display:none">
+		<div id="emoticons"></div>
+	</div>
+	<div id="colors" style="display:none"></div>
+	<div id="optionsContainer">
+		<button id="toggleHelp" title="Show/hide help" onclick="toggleContainer('helpContainer', ['onlineListContainer','settingsContainer'])"></button>
+		<button id="toggleSettings" title="Show/hide settings" onclick="toggleContainer('settingsContainer', ['onlineListContainer','helpContainer'])"></button>
+		<button id="toggleOnline" title="Show/hide online list" onclick="toggleContainer('onlineListContainer', ['settingsContainer','helpContainer'])"></button>
+		<button id="toggleSound" title="Sound on/off" onclick="chat.toggleSetting('sound', 'toggleSound')"></button>
+		<button id="toggleAutoscroll" title="Autoscroll on/off" onclick="chat.toggleSetting('autoScroll', 'toggleAutoscroll')"></button>
+	</div>
+	<div id="onlineListContainer">
+		<h3 id="userCount"></h3>
+		<div id="onlineList"></div>
+	</div>
+	<div id="helpContainer" style="display:none">
+		<h3>Help</h3>
+		<table>
+			<tr>
+				<td class="desc">Set yourself as away:</td>
+				<td class="code">/away [reason]</td>
+			</tr>
+			<tr>
+				<td class="desc">Return from away:</td>
+				<td class="code">/back</td>
+			</tr>
+			<tr>
+				<td class="desc">Go to a different room:</td>
+				<td class="code">/go roomname</td>
+			</tr>
+			<tr>
+				<td class="desc">Go to the lobby:</td>
+				<td class="code">/quit</td>
+			</tr>
+			<tr>
+				<td class="desc">Describe an action:</td>				
+				<td class="code">/me action</td>
+			</tr>
+			<tr>
+				<td class="desc">Roll dice:</td>
+				<td class="code">/roll [min]-[max] [count]<br>/poker</td>
+			</tr>
+			<tr>
+				<td class="desc">Send a private message:</td>
+				<td class="code">/tell username message</td>
+			</tr>
+			<tr>
+				<td class="desc">Describe an action privately:</td>
+				<td class="code">/describe username action</td>
+			</tr>
+			<tr>
+				<td class="desc">Open a private conversation tab:</td>
+				<td class="code">/pm username</td>
+			</tr>
+			<tr>
+				<td class="desc">Close a private conversation tab:</td>
+				<td class="code">/cpm username</td>
+			</tr>
+			<tr>
+				<td class="desc">Ignore or unignore messages from user:</td>
+				<td class="code">/ignore username</td>
+			</tr>
+			<tr>
+				<td class="desc">List ignored users:</td>
+				<td class="code">/ignore</td>
+			</tr>
+			<tr>
+				<td class="desc">Locate a user:</td>
+				<td class="code">/find username</td>
+			</tr>
+			<tr>
+				<td class="desc">List online users:</td>
+				<td class="code">/who [roomname]</td>
+			</tr>
+			<tr>
+				<td class="desc">List available rooms:</td>
+				<td class="code">/list</td>
+			</tr>
+			<tr>
+				<td class="desc">Clear the chat screen:</td>
+				<td class="code">/cls</td>
+			</tr>
+			<tr>
+				<td class="hint" colspan="2">
+					<span class="b">Hint</span>:
+					You can start typing a name and then use the [<span class="b">Tab</span>] key to auto-complete it!
+					<br><br>
+					Click the [<span class="b">000000</span>] box below the chat to set your font color.
+				</td>
+			</tr>
+		</table>
+		<h3 id="hostOnlyHelp">Hosts only</h3>
+		<table>
+			<tr>
+				<td class="desc">Kick a user:</td>
+				<td class="code">/kick username [reason]</td>
+			</tr>
+			<tr>
+				<td class="desc">Ban a user:</td>
+				<td class="code">/ban username [minutes] [reason]</td>
+			</tr>
+			<tr>
+				<td class="desc">Unban a user:</td>
+				<td class="code">/unban username</td>
+			</tr>
+			<tr>
+				<td class="desc">Show ban information for a banned user:</td>
+				<td class="code">/baninfo username</td>
+			</tr>
+			<tr>
+				<td class="desc">Mute a user:</td>
+				<td class="code">/mute username</td>
+			</tr>
+			<tr>
+				<td class="desc">Unmute a user:</td>
+				<td class="code">/unmute username</td>
+			</tr>
+			<tr>
+				<td class="desc">Alert a user:</td>
+				<td class="code">/alert username [message]</td>
+			</tr>
+			<tr>
+				<td class="desc">List banned users:</td>
+				<td class="code">/bans</td>
+			</tr>
+			<tr>
+				<td class="desc">Display a user's IP:</td>
+				<td class="code">/ip username</td>
+			</tr>
+		</table>
+	</div>
+	<div id="settingsContainer" style="display:none">
+		<h3>Settings</h3>
+		<table>
+			<tr>
+				<td><label for="bbCodeSetting">Enable BBCode:</label></td>
+				<td class="setting"><input type="checkbox" id="bbCodeSetting" onclick="chat.setSetting('bbCode', this.checked)"></td>
+			</tr>
+			<tr>
+				<td><label for="fontStylesSetting">Enable font styles:</label></td>
+				<td class="setting"><input type="checkbox" id="fontStylesSetting" onclick="chat.setSetting('fontStyles', this.checked)"></td>
+			</tr>
+			<tr>
+				<td><label for="hyperLinksSetting">Enable hyperlinks:</label></td>
+				<td class="setting"><input type="checkbox" id="hyperLinksSetting" onclick="chat.setSetting('hyperLinks', this.checked)"></td>
+			</tr>
+			<tr>
+				<td><label for="imagesSetting">Enable automatic images (requires hyperlinks):</label></td>
+				<td class="setting"><input type="checkbox" id="imagesSetting" onclick="chat.setSetting('images', this.checked)"></td>
+			</tr>
+			<tr>
+				<td><label for="youTubeSetting">Enable YouTube videos (requires hyperlinks):</label></td>
+				<td class="setting"><input type="checkbox" id="youTubeSetting" onclick="chat.setSetting('youTube', this.checked)"></td>
+			</tr>
+			<tr>
+				<td><label for="lineBreaksSetting">Enable line breaks:</label></td>
+				<td class="setting"><input type="checkbox" id="lineBreaksSetting" onclick="chat.setSetting('lineBreaks', this.checked)"></td>
+			</tr>
+			<tr>
+				<td><label for="emoticonsSetting">Enable emoticons:</label></td>
+				<td class="setting"><input type="checkbox" id="emoticonsSetting" onclick="chat.setSetting('emoticons', this.checked)"></td>
+			</tr>
+			<tr>
+				<td><label for="timeStampsSetting">Enable timestamps:</label></td>
+				<td class="setting"><input type="checkbox" id="timeStampsSetting" onclick="chat.setSetting('timeStamps', this.checked)"></td>
+			</tr>
+			<tr>
+				<td><label for="autoFocusSetting">Automatically set the focus on the input field:</label></td>
+				<td class="setting"><input type="checkbox" id="autoFocusSetting" onclick="chat.setSetting('autoFocus', this.checked)"></td>
+			</tr>
+			<tr>
+				<td><label for="showTypingSetting">Let other users know when you're typing:</label></td>
+				<td class="setting"><input type="checkbox" id="showTypingSetting" onclick="chat.setSetting('showTyping', this.checked)"></td>
+			</tr>
+			<tr>
+				<td><label for="maxMessagesSetting">Maximum number of messages to keep per tab:</label></td>
+				<td class="setting"><input type="text" id="maxMessagesSetting" onchange="chat.setSetting('maxMessages', +this.value)"></td>
+			</tr>
+			<tr>
+				<td><label for="dateFormatSetting">Format of date and time display:</label></td>
+				<td class="setting"><input type="text" id="dateFormatSetting" onchange="chat.setSetting('dateFormat', this.value)"></td>
+			</tr>
+			<tr>
+				<td><label for="soundVolumeSetting">Sound volume:</label></td>
+				<td class="setting">
+					<select id="soundVolumeSetting" onchange="chat.setsoundVolume(this.options[this.selectedIndex].value)">
+						<option value="1.0">100%</option>
+						<option value="0.9">90%</option>
+						<option value="0.8">80%</option>
+						<option value="0.7">70%</option>
+						<option value="0.6">60%</option>
+						<option value="0.5">50%</option>
+						<option value="0.4">40%</option>
+						<option value="0.3">30%</option>
+						<option value="0.2">20%</option>
+						<option value="0.1">10%</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="soundReceiveSetting">Sound for incoming messages:</label></td>
+				<td class="setting">
+					<select id="soundReceiveSetting" onchange="chat.setSound('Receive', this.options[this.selectedIndex].value)"><option value="">-</option></select>
+					<button onclick="chat.playSound(chat.settings.soundReceive)"></button>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="soundSendSetting">Sound for outgoing messages:</label></td>
+				<td class="setting">
+					<select id="soundSendSetting" onchange="chat.setSound('Send', this.options[this.selectedIndex].value)"><option value="">-</option></select>
+					<button onclick="chat.playSound(chat.settings.soundSend)"></button>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="soundEnterSetting">Sound for login and room enter messages:</label></td>
+				<td class="setting">
+					<select id="soundEnterSetting" onchange="chat.setSound('Enter', this.options[this.selectedIndex].value)"><option value="">-</option></select>
+					<button onclick="chat.playSound(chat.settings.soundEnter)"></button>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="soundLeaveSetting">Sound for logout and room leave messages:</label></td>
+				<td class="setting">
+					<select id="soundLeaveSetting" onchange="chat.setSound('Leave', this.options[this.selectedIndex].value)"><option value="">-</option></select>
+					<button onclick="chat.playSound(chat.settings.soundLeave)"></button>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="soundServerSetting">Sound for server messages:</label></td>
+				<td class="setting">
+					<select id="soundServerSetting" onchange="chat.setSound('Server', this.options[this.selectedIndex].value)"><option value="">-</option></select>
+					<button onclick="chat.playSound(chat.settings.soundServer)"></button>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="soundErrorSetting">Sound for error messages:</label></td>
+				<td class="setting">
+					<select id="soundErrorSetting" onchange="chat.setSound('Error', this.options[this.selectedIndex].value)"><option value="">-</option></select>
+					<button onclick="chat.playSound(chat.settings.soundError)"></button>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="blinkSetting">Blink window title on new messages:</label></td>
+				<td class="setting"><input type="checkbox" id="blinkSetting" onclick="chat.setSetting('blink', this.checked)"></td>
+			</tr>
+			<tr>
+				<td><label for="blinkIntervalSetting">Blink interval in milliseconds:</label></td>
+				<td class="setting"><input type="text" id="blinkIntervalSetting" onchange="chat.setSetting('blinkInterval', +this.value)"></td>
+			</tr>
+			<tr>
+				<td><label for="blinkIntervalNumberSetting">Number of blink intervals:</label></td>
+				<td class="setting"><input type="text" id="blinkIntervalNumberSetting" onchange="chat.setSetting('blinkIntervalNumber', +this.value)"></td>
+			</tr>
+		</table>
+	</div>
+	<script>chat.run()</script>
+</body>
+</html>

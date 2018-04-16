@@ -1,0 +1,35 @@
+h1 {
+	padding-bottom: 5px;
+}
+span.changed {
+	font-size: 10px;
+	font-family: Verdana;
+	font-weight: bold;
+	color: #00CC00;
+	display: block;
+	margin-bottom: 10px;
+}
+form {
+	line-height: 22px;
+	display: block;
+	margin-bottom: 20px;
+}
+input[type="text"], input[type="password"] {
+	margin-bottom:10px;
+	width: 150px;
+}
+input[type="email"] {
+	margin-bottom:10px;
+	width: 180px;
+}
+form button[type="submit"] {
+	clear: both;
+	display: block;
+	margin-top: 4px;
+}
+form span  {
+	font-size: 12px;
+	font-family: Verdana;
+	padding-left: 6px;
+	color: #FF0000;
+}
